@@ -1,0 +1,5 @@
+data-sources:
+ imslp:
+  ping-id: Symphony No.9, Op.125 (Beethoven, Ludwig van) 
+logging:
+ level: INFO
