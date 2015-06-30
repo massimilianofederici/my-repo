@@ -42,6 +42,10 @@ public class Library {
 		this.baseDirectory = baseDirectory;
 	}
 
+	public File getBaseDirectory() {
+		return baseDirectory;
+	}
+
 	public AudioFile[] files() throws IOException {
 		validateIndex();
 		final DirectoryReader reader = DirectoryReader.open(index);
@@ -87,8 +91,10 @@ public class Library {
 		for (int i = 0; i < fields.size(); i++) {
 			final IndexableField field = fields.get(i);
 			final String name = field.name();
-			final String value = field.stringValue();
-			builder.withTag(name, value);
+			if (!name.equals("file")) {
+				final String value = field.stringValue();
+				builder.withTag(name, value);
+			}
 		}
 		return builder.build();
 	}

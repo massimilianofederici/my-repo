@@ -18,5 +18,4 @@ public class AudioFile {
 	public Tags getTags() {
 		return tags;
 	}
-
 }

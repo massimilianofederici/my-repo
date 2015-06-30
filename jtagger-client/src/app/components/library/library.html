@@ -1,0 +1,19 @@
+<div class="container" ng-controller="LibraryCtrl">
+	<div class="text-center">
+	<h4>
+		<button ng-click="actions.refresh()" class="btn btn-success">Refresh
+			<i class="fa fa-spinner fa-spin"></i>
+		</button>
+		<button ng-click="actions.update()" class="btn btn-success">Apply
+			<i class="fa fa-spinner fa-spin"></i>
+		</button>
+		<button ng-show="options.loading" class="btn btn-success">Loading...
+			<i class="fa fa-spinner fa-spin"></i>
+		</button> {{options.library.path}}</h4>
+		<span></span>
+		
+	</div>
+
+	<div class="gridStyle" ng-grid="options.libraryGrid"></div>
+	<div class="detailStyle" ng-grid="options.detailGrid"></div>
+</div>
